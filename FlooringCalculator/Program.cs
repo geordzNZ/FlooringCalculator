@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Header details
+            Console.WriteLine("\t\tWELCOME");
+            Console.WriteLine("\t  Flooring Calculator");
+            Console.WriteLine("=======================================\n");
         }
     }
 }
