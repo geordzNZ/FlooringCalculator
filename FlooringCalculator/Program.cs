@@ -5,12 +5,12 @@
         static void Main(string[] args)
         {
             //Header section
-            Console.WriteLine("\t\tWELCOME");
-            Console.WriteLine("\t  Flooring Calculator");
-            Console.WriteLine("=======================================\n");
+            Console.WriteLine("\t\t\tWELCOME");
+            Console.WriteLine("\t\t  Flooring Calculator");
+            Console.WriteLine("==========================================================\n");
 
             //User input of section
-            Console.WriteLine("Please enter the following details to calculate the flooring costs... (whole numbers only please)");
+            Console.WriteLine("Enter the following details to calculate the flooring costs... \n(whole numbers only please)");
             Console.Write("\t - Width: ");
             string floorWidth = Console.ReadLine();
             Console.Write("\t - Length: ");
@@ -22,13 +22,15 @@
             Console.WriteLine("\n\tYou entered the following values...");
             Console.WriteLine($"\tW: {floorWidth} / L: {floorLength} / UC: {tileUnitCost}");
 
-            //Convert text to numbers
+            //Convert text to numbers (assuming correct input for now)
             int convertedFloorWidth = Int32.Parse(floorWidth);
             int convertedFloorLength = Int32.Parse(floorLength);
             int convertedUnitCost = Int32.Parse(tileUnitCost);
 
-            Console.WriteLine($"\n\tTotal Cost for flooring is {convertedFloorWidth * convertedFloorLength * convertedUnitCost}");
-
+            //Calculate totals
+            int totalCost = convertedFloorWidth * convertedFloorLength * convertedUnitCost;
+            Console.WriteLine($"\n\tTotal Cost for flooring is {totalCost}");
+            Console.WriteLine("\n==========================================================\n");
         }
     }
 }
