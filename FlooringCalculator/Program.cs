@@ -2,6 +2,9 @@
 {
     internal class Program
     {
+        const int LABOUR_COST_PER_HOUR = 86;
+        const int FLOORING_PRE_HOUR = 20;
+        
         static void Main(string[] args)
         {
             //Header section
@@ -37,10 +40,8 @@
 
 
             //Bonus stage: calculate total cost including cost per hour
-            int labourCostPerHour = 86;
-            int flooringPerHour = 20;
-            decimal workUnits = (decimal)roomSize / flooringPerHour;
-            decimal labourCost = (decimal)workUnits * labourCostPerHour;
+            decimal workUnits = (decimal)roomSize / FLOORING_PRE_HOUR;
+            decimal labourCost = (decimal)workUnits * LABOUR_COST_PER_HOUR;
             
             Console.WriteLine($"\tCost for Labour:\t{labourCost}");
 
