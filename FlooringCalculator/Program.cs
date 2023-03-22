@@ -28,11 +28,11 @@
             //Convert text to numbers (assuming correct input for now)
             int convertedFloorWidth = Int32.Parse(floorWidth);
             int convertedFloorLength = Int32.Parse(floorLength);
-            int convertedUnitCost = Int32.Parse(tileUnitCost);
+            decimal convertedUnitCost = Convert.ToDecimal(tileUnitCost);
 
             //Calculate totals
             int roomSize = convertedFloorWidth * convertedFloorLength;
-            int flooringCost = roomSize * convertedUnitCost;
+            decimal flooringCost = roomSize * convertedUnitCost;
             Console.WriteLine($"Costs breakdown...");
             Console.WriteLine($"\tCost for flooring:\t{flooringCost}");
 
