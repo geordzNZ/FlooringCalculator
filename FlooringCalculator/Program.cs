@@ -82,9 +82,6 @@
             Console.WriteLine($"Costs breakdown...");
             Console.WriteLine($"\tCost for flooring:\t{flooringCost.ToString("0.00")}");
 
-            // Bonus stage: caclulation for non rectangular rooms
-
-
             // Bonus stage: calculate total cost including cost per hour
             double workUnits = (double)floorSize / FLOORING_PRE_HOUR;
             double labourCost = (double)workUnits * LABOUR_COST_PER_HOUR;
