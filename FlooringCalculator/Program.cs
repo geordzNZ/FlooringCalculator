@@ -8,15 +8,10 @@
 
         static void Main(string[] args)
         {
-            string floorWidth = "";
-            string floorLength = "";
-            string floorRadius = "";
             string tileUnitCost = "";
-            int convertedFloorWidth = 0;
-            int convertedFloorLength = 0;
-            int convertedFloorRadius = 0;
             double convertedUnitCost = 0;
             double floorSize = 0;
+
 
             // Header section
             Console.WriteLine("\t\t\tWELCOME");
@@ -36,49 +31,43 @@
             if (floorShape == "R")
             {
                 Console.Write("\t - Width:\t");
-                floorWidth = Console.ReadLine();
+                string floorWidth = Console.ReadLine();
                 Console.Write("\t - Length:\t");
-                floorLength = Console.ReadLine();
+                string floorLength = Console.ReadLine();
+
+                Console.Write("\t - Unit Cost:\t");
+                tileUnitCost = Console.ReadLine();
+
+                // Write user input
+                Console.WriteLine("\nYou entered the following values...");
+                Console.WriteLine($"\tRectangular room / W: {floorWidth} / L: {floorLength} / UC: {tileUnitCost}\n");
+
+                // Convert text to numbers (assuming correct input for now)
+                int convertedFloorWidth = Int32.Parse(floorWidth);
+                int convertedFloorLength = Int32.Parse(floorLength);
+                convertedUnitCost = Convert.ToDouble(tileUnitCost);
+
+                // Calculate floring totals
+                floorSize = convertedFloorWidth * convertedFloorLength;
+
             }
             else
             {
                 Console.Write("\t - Radius:\t");
-                floorRadius = Console.ReadLine();
-            }
-            Console.Write("\t - Unit Cost:\t");
-            tileUnitCost = Console.ReadLine();
+                string floorRadius = Console.ReadLine();
 
+                Console.Write("\t - Unit Cost:\t");
+                tileUnitCost = Console.ReadLine();
 
-            // Write user input 
-            Console.WriteLine("\nYou entered the following values...");
-            if (floorShape == "R")
-            {
-                Console.WriteLine($"\tRectangular room / W: '{floorWidth}' / L: '{floorLength}' / UC: {tileUnitCost}\n");
-            }
-            else
-            {
+                // Write user input 
+                Console.WriteLine("\nYou entered the following values...");
                 Console.WriteLine($"\tCircular room / R: {floorRadius} / UC: {tileUnitCost}\n");
-            }
 
-            // Convert text to numbers (assuming correct input for now)
-            if (floorShape == "R")
-            {
-                convertedFloorWidth = Int32.Parse(floorWidth);
-                convertedFloorLength = Int32.Parse(floorLength);
-            }
-            else
-            {
-                convertedFloorRadius = Int32.Parse(floorRadius);
-            }
-            convertedUnitCost = Convert.ToDouble(tileUnitCost);
+                // Convert text to numbers (assuming correct input for now)
+                int convertedFloorRadius = Int32.Parse(floorRadius);
+                convertedUnitCost = Convert.ToDouble(tileUnitCost);
 
-            // Calculate floring totals
-            if (floorShape == "R")
-            {
-                floorSize = convertedFloorWidth * convertedFloorLength;
-            }
-            else
-            {
+                // Calculate floring totals
                 floorSize = PI * (convertedFloorRadius * convertedFloorRadius);
             }
 
