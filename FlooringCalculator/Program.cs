@@ -4,7 +4,6 @@
     {
         const int LABOUR_COST_PER_HOUR = 86;
         const int FLOORING_PRE_HOUR = 20;
-        const double PI = Math.PI;
 
         static void Main(string[] args)
         {
@@ -18,18 +17,18 @@
             Console.WriteLine("\t\t  Flooring Calculator");
             Console.WriteLine("==========================================================\n");
 
-            // User input of section
+            // User input  - Room shape
             Console.WriteLine("Enter details about your room and tile cost:");
             Console.WriteLine("\tChoose room shape from the following list:");
             Console.WriteLine("\t\tRectangle = R or r");
             Console.WriteLine("\t\tCircle = C or c");
             Console.Write("\t - Room Shape:\t");
-            //floorShape = (char)Console.Read();
             string floorShape = Console.ReadLine();
             floorShape = floorShape.ToUpper();
 
             if (floorShape == "R")
             {
+                // User input  - Room dimensions and costs
                 Console.Write("\t - Width:\t");
                 string floorWidth = Console.ReadLine();
                 Console.Write("\t - Length:\t");
@@ -53,6 +52,7 @@
             }
             else
             {
+                // User input  - Room dimensions and costs
                 Console.Write("\t - Radius:\t");
                 string floorRadius = Console.ReadLine();
 
@@ -68,7 +68,7 @@
                 convertedUnitCost = Convert.ToDouble(tileUnitCost);
 
                 // Calculate floring totals
-                floorSize = PI * (convertedFloorRadius * convertedFloorRadius);
+                floorSize = Math.PI * (convertedFloorRadius * convertedFloorRadius);
             }
 
             double flooringCost = floorSize * convertedUnitCost;
