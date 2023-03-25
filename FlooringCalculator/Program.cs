@@ -8,7 +8,6 @@
 
         static void Main(string[] args)
         {
-            string floorShape = "";
             string floorWidth = "";
             string floorLength = "";
             string floorRadius = "";
@@ -26,10 +25,15 @@
 
             // User input of section
             Console.WriteLine("Enter details about your room and tile cost:");
-            Console.Write("\t - Room Shape (Rect or Circ):\t");
-            floorShape = Console.ReadLine();
+            Console.WriteLine("\tChoose room shape from the following list:");
+            Console.WriteLine("\t\tRectangle = R or r");
+            Console.WriteLine("\t\tCircle = C or c");
+            Console.Write("\t - Room Shape:\t");
+            //floorShape = (char)Console.Read();
+            string floorShape = Console.ReadLine();
+            floorShape = floorShape.ToUpper();
 
-            if (floorShape == "Rect")
+            if (floorShape == "R")
             {
                 Console.Write("\t - Width:\t");
                 floorWidth = Console.ReadLine();
@@ -47,9 +51,9 @@
 
             // Write user input 
             Console.WriteLine("\nYou entered the following values...");
-            if (floorShape == "Rect")
+            if (floorShape == "R")
             {
-                Console.WriteLine($"\tRectangular room / W: {floorWidth} / L: {floorLength} / UC: {tileUnitCost}\n");
+                Console.WriteLine($"\tRectangular room / W: '{floorWidth}' / L: '{floorLength}' / UC: {tileUnitCost}\n");
             }
             else
             {
@@ -57,7 +61,7 @@
             }
 
             // Convert text to numbers (assuming correct input for now)
-            if (floorShape == "Rect")
+            if (floorShape == "R")
             {
                 convertedFloorWidth = Int32.Parse(floorWidth);
                 convertedFloorLength = Int32.Parse(floorLength);
@@ -69,7 +73,7 @@
             convertedUnitCost = Convert.ToDouble(tileUnitCost);
 
             // Calculate floring totals
-            if (floorShape == "Rect")
+            if (floorShape == "R")
             {
                 floorSize = convertedFloorWidth * convertedFloorLength;
             }
